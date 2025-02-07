@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdNova AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="title-bar">
+        <div class="title">
+            <h1>AdNova AI</h1>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                <li><a href="#how-to-use"><i class="fas fa-question-circle"></i> How to Use</a></li>
+                <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <h1>Ad<span>Nova AI</span></h1>
+        <p>Detect Advertisement Scams on Social Media</p>
+
+        <div class="input-container">
+            <input type="text" id="ad-url" placeholder="Paste Ad URL here">
+            <button onclick="detectScam()">Detect</button>
+        </div>
+
+        <div class="result">
+            <p id="result-text"></p>
+        </div>
+        <!-- Pop-Up Reporting Modal -->
+<div id="report-modal" class="report-modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeReportModal()">&times;</span>
+        <h2>Report a Scam</h2>
+        <input type="text" id="scam-link" placeholder="Paste the scam link here">
+        <button onclick="submitReport()">Submit Report</button>
+    </div>
+</div>
+
+<!-- Report Scam Button -->
+<div class="report-section">
+    <button id="report-btn" onclick="openReportModal()">Report Scam</button>
+</div>
+        
+        <div class="feature-buttons">
+            
+            <a href="/ad-scam"><button class="feature-btn">Advertisement Scam Detection</button></a>
+            <a href="/user-profiling"><button class="feature-btn">User Profiling</button></a>
+            <a href="/phishing"><button class="feature-btn">Phishing Link Detection</button></a>
+            <a href="/phishing"><button class="feature-btn">Others</button></a>
+        </div>
+    </div>
+
+
+
+    <div class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About AdNova AI</h2>
+                <p>AdNova AI is an advanced tool designed to detect and prevent scam advertisements on social media platforms. Our AI-powered solution analyzes ad content, images, and videos to protect users from fraudulent activities.</p>
+                <p>With cutting-edge technology, AdNova AI ensures a safer online experience by identifying and blocking malicious ads in real-time.</p>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='aboutimage.png') }}" alt="About AdNova AI">
+            </div>
+        </div>
+    </div>
+    <div id="features" class="feature-section">
+        <h1 class="title1">Features of AdNova AI</h1>
+        <p class="subtitle">Advanced AI Technology to detect fraudulent advertisements and protect users from cyber scams.</p>
+        <div class="features-grid">
+            <!-- Feature 1: Advertisement Scam Detection -->
+            <div class="feature">
+                <div class="feature-content">
+                    <img src="{{ url_for('static', filename='scamdetection.png') }}" alt="Advertisement Scam Detection">
+                    <div class="feature-text">
+                        <h2>Advertisement Scam Detection</h2>
+                        <p>Detect fraudulent advertisements by analyzing ad content, images, and videos to protect users from scams.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Feature 2: User Profiling -->
+            <div class="feature">
+                <div class="feature-content">
+                    <img src="{{ url_for('static', filename='userprofile.png') }}" alt="User Profiling">
+                    <div class="feature-text">
+                        <h2>User Profiling</h2>
+                        <p>Analyze user behavior to identify potential risks and protect vulnerable user groups from targeted scams.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Feature 3: Phishing Link Detection -->
+            <div class="feature">
+                <div class="feature-content">
+                    <img src="{{ url_for('static', filename='Phishing ads.png') }}" alt="Phishing Link Detection">
+                    <div class="feature-text">
+                        <h2>Phishing Link Detection</h2>
+                        <p>Identify and block phishing links in ads to prevent users from falling victim to malicious websites.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Feature 4: Real-Time Detection -->
+            <div class="feature">
+                <div class="feature-content">
+                    <img src="{{ url_for('static', filename='realtimedetection.png') }}" alt="Real-Time Detection">
+                    <div class="feature-text">
+                        <h2>Real-Time Detection</h2>
+                        <p>Monitor and notify users about potential scam ads in real-time to ensure immediate protection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+            <!-- Feature 2: User Profiling -->
+            
+    <div id="how-to-use" class="how-to-use-section">
+        <h1>How to Use AdNova AI</h1>
+        <p class="subtitle">Follow these simple steps to detect scam advertisements and protect yourself from fraud.</p>
+        <div class="steps">
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-link"></i>
+                </div>
+                <div class="step-content">
+                    <h2>Step 1: Paste the URL</h2>
+                    <p>Copy and paste the URL of the advertisement you want to check into the input field.</p>
+                </div>
+            </div>
+    
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="step-content">
+                    <h2>Step 2: Click Detect</h2>
+                    <p>Click the "Detect" button to analyze the ad using AdNova AI's advanced algorithms.</p>
+                </div>
+            </div>
+    
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="step-content">
+                    <h2>Step 3: View Results</h2>
+                    <p>Get instant results to see if the ad is a scam or safe to interact with.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="contact-section">
+        <h1>Contact Us</h1>
+        <p>If you have any questions or need support, feel free to reach out to us.</p>
+        <div class="contact-info">
+            <p>Email: support@adshieldai.com</p>
+            <p>Address: 123 Cyber Security Lane, Tech City, USA</p>
+        </div>
+    </div>
+    <script>
+        function detectScam() {
+            let url = document.getElementById("ad-url").value;
+            fetch("/detect", {
+                method: "POST",
+                body: JSON.stringify({ url: url }),
+                headers: { "Content-Type": "application/json" }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result-text").innerHTML = data.result;
+            });
+        }
+        // Open the report modal
+function openReportModal() {
+    const modal = document.getElementById("report-modal");
+    modal.style.display = "flex";
+}
+
+// Close the report modal
+function closeReportModal() {
+    const modal = document.getElementById("report-modal");
+    modal.style.display = "none";
+}
+
+// Submit the report
+function submitReport() {
+    const scamLink = document.getElementById("scam-link").value;
+    if (scamLink) {
+        // Send the report to a predefined email (simulated here)
+        const email = "cybercrime@example.com";
+        const subject = "Scam Report";
+        const body = `A scam has been reported with the following link: ${scamLink}`;
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open the user's email client
+        window.location.href = mailtoLink;
+
+        alert("Thank you for reporting the scam. A report has been sent to the cybercrime authorities.");
+        closeReportModal(); // Close the modal after submission
+    } else {
+        alert("Please provide a valid scam link.");
+    }
+}
+
+        
+    </script>
+</body>
+</html>

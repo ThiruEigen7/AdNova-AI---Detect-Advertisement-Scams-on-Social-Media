@@ -1,0 +1,560 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f4f8;
+    color: #0c0909;
+    line-height: 1.6;
+}
+/* Global h1 styling (if needed) */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* Hero Section h1 */
+.hero-section h1 {
+    color: white; /* White text for blue background */
+    font-size: 56px;
+    font-weight: 800;
+}
+
+/* About Section h1 */
+.about-section h1 {
+    color: #1E3C72; /* Dark blue text for white background */
+    font-size: 48px;
+    font-weight: 700;
+}
+
+/* Feature Section h1 */
+.feature-section h1 {
+    color: #1E3C72; /* Dark blue text for light background */
+    font-size: 48px;
+    font-weight: 700;
+}
+/* Reporting Section Styling */
+/* Pop-Up Reporting Modal Styling */
+.report-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #1E3C72;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content button:hover {
+    background: #45a049;
+    transform: translateY(-3px);
+}
+
+.modal-content button:active {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #1E3C72;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #2A5298;
+}
+
+/* Report Scam Button Styling */
+#report-btn {
+    padding: 12px 24px;
+    background: #1E3C72;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#report-btn:hover {
+    background: #2A5298;
+    transform: translateY(-3px);
+}
+
+#report-btn:active {
+    transform: translateY(0);
+}
+/* How to Use Section h1 */
+.how-to-use-section h1 {
+    color: #1E3C72; /* Dark blue text for white background */
+    font-size: 48px;
+    font-weight: 700;
+}
+
+/* Contact Section h1 */
+.contact-section h1 {
+    color: white; /* White text for dark blue background */
+    font-size: 48px;
+    font-weight: 700;
+}
+.title-bar {
+    background-color: #1E3C72;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.title-bar .title h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-bar li {
+    margin-left: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+}
+
+.nav-bar a:hover {
+    color: #F0FFFF;
+}
+
+.nav-bar i {
+    margin-right: 8px;
+}
+
+.hero-section {
+    background: linear-gradient(to right, #1E3C72, #2A5298);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 56px;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+}
+
+.hero-section p {
+    font-size: 24px;
+    margin: 20px 0 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input-container input {
+    padding: 10px;
+    width: 40%;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.input-container button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* About Section Styling */
+.about-section {
+    padding: 80px 20px;
+    background: white;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Space between text and image */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #1E3C72;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #666;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Feature Section Styling */
+/* Feature Section Styling */
+/* Feature Section Styling */
+.feature-section {
+    padding: 60px 20px;
+    background: #f0f4f8;
+    text-align: center;
+}
+
+.feature-section .title1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #1E3C72;
+}
+
+.feature-section .subtitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: #666;
+}
+
+.features-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Increased gap between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature {
+    background: white;
+    padding: 30px; /* Increased padding */
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-content {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Increased gap between image and text */
+}
+
+.feature img {
+    width: 300px; /* Larger image width */
+    height: 200px; /* Larger image height */
+    border-radius: 15px; /* Slightly rounded corners */
+    object-fit: cover; /* Ensures the image fits well */
+    transition: transform 0.3s ease;
+}
+
+.feature img:hover {
+    transform: scale(1.05);
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text h2 {
+    font-size: 28px; /* Larger heading */
+    margin-bottom: 20px; /* Increased spacing */
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; /* Bold heading */
+    color: #1E3C72;
+}
+
+.feature-text p {
+    font-size: 18px; /* Larger text */
+    color: #666;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.8; /* Increased line height for better readability */
+}
+/* How to Use Section Styling */
+.how-to-use-section {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+}
+
+.how-to-use-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #1E3C72;
+}
+
+.how-to-use-section .subtitle {
+    font-size: 24px;
+    margin-bottom: 60px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: #666;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    background: #f0f4f8;
+    padding: 30px;
+    border-radius: 15px;
+    width: 30%;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.step-icon {
+    font-size: 48px;
+    color: #1E3C72;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.step:hover .step-icon {
+    transform: scale(1.1);
+}
+
+.step-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #1E3C72;
+}
+
+.step-content p {
+    font-size: 16px;
+    color: #666;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Animation for step icons */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.step-icon i {
+    animation: bounce 2s infinite;
+}
+
+.contact-section {
+    padding: 60px 20px;
+    background: #1E3C72;
+    color: white;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+}
+
+.contact-info {
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+}
+
+/* Add this CSS for the new feature buttons */
+.feature-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-btn {
+    padding: 12px 24px;
+    background: #1E3C72;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.feature-btn:hover {
+    background: #2A5298;
+    transform: translateY(-3px);
+}
+
+.feature-btn:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

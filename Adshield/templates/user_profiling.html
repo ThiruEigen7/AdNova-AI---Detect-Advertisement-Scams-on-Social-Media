@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdNova AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="title-bar">
+        <div class="title">
+            <h1>AdNova AI</h1>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                <li><a href="#how-to-use"><i class="fas fa-question-circle"></i> How to Use</a></li>
+                <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <h1>Ad<span>Nova AI</span></h1>
+        <p>Detect Advertisement Scams on Social Media</p>
+
+        <div class="input-container">
+            <input type="text" id="ad-url" placeholder="Paste Ad URL here">
+            <button onclick="detectScam()">Detect</button>
+        </div>
+
+        <div class="result">
+            <p id="result-text"></p>
+        </div>
+        
+        <div class="feature-buttons">
+            
+            <a href="/ad-scam"><button class="feature-btn">Advertisement Scam Detection</button></a>
+            <a href="/user-profiling"><button class="feature-btn">User Profiling</button></a>
+            <a href="/phishing"><button class="feature-btn">Phishing Link Detection</button></a>
+            <a href="/phishing"><button class="feature-btn">Others</button></a>
+        </div>
+    </div>
+
+
+
+    <div class="about-section">
+        <h2>About AdNova AI</h2>
+        <p>AdSentry AI is an advanced tool designed to detect and prevent scam advertisements on social media platforms. Our AI-powered solution analyzes ad content, images, and videos to protect users from fraudulent activities.</p>
+    </div>
+
+    <div id="features" class="feature-section">
+        <h1 class="title1">Features of AdNova AI</h1>
+        <p class="subtitle">Advanced AI Technology to detect fraudulent advertisements and protect users from cyber scams.</p>
+        <div class="features-grid">
+            <!-- Feature 1: Advertisement Scam Detection -->
+            <div class="feature">
+                <img src="{{ url_for('static', filename='ad.jpeg') }}" alt="Advertisement Scam Detection">
+                <h2>Advertisement Scam Detection</h2>
+                <p>Detect fraudulent advertisements by analyzing ad content, images, and videos to protect users from scams.</p>
+            </div>
+    
+            <!-- Feature 2: User Profiling -->
+            <div class="feature">
+                <img src="{{ url_for('static', filename='userprof.jpeg') }}" alt="User Profiling">
+                <h2>User Profiling</h2>
+                <p>Analyze user behavior to identify potential risks and protect vulnerable user groups from targeted scams.</p>
+            </div>
+    
+            <!-- Feature 3: Phishing Link Detection -->
+            <div class="feature">
+                <img src="{{ url_for('static', filename='cybercrime.jpg') }}" alt="Phishing Link Detection">
+                <h2>Phishing Link Detection</h2>
+                <p>Identify and block phishing links in ads to prevent users from falling victim to malicious websites.</p>
+            </div>
+    
+            <!-- Feature 4: Real-Time Detection -->
+            <div class="feature">
+                <img src="{{ url_for('static', filename='alert.jpeg') }}" alt="Real-Time Detection">
+                <h2>Real-Time Detection</h2>
+                <p>Monitor and notify users about potential scam ads in real-time to ensure immediate protection.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="how-to-use" class="how-to-use-section">
+        <h1>How to Use AdNova AI</h1>
+        <div class="steps">
+            <div class="step">
+                <h2>Step 1</h2>
+                <p>Paste the URL of the advertisement you want to check.</p>
+            </div>
+            <div class="step">
+                <h2>Step 2</h2>
+                <p>Click the "Detect" button to analyze the ad.</p>
+            </div>
+            <div class="step">
+                <h2>Step 3</h2>
+                <p>View the results to see if the ad is a scam or not.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="contact-section">
+        <h1>Contact Us</h1>
+        <p>If you have any questions or need support, feel free to reach out to us.</p>
+        <div class="contact-info">
+            <p>Email: support@adsentryai.com</p>
+            <p>Address: 123 Cyber Security Lane, Tech City, USA</p>
+        </div>
+    </div>
+
+    <script>
+        function detectScam() {
+            let url = document.getElementById("ad-url").value;
+            fetch("/detect", {
+                method: "POST",
+                body: JSON.stringify({ url: url }),
+                headers: { "Content-Type": "application/json" }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result-text").innerHTML = data.result;
+            });
+        }
+
+        
+    </script>
+</body>
+</html>
